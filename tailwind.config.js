@@ -1,5 +1,4 @@
 module.exports = {
-  purge: [],
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {}
@@ -10,5 +9,10 @@ module.exports = {
       borderWidth: ['last']
     }
   },
-  plugins: []
+  plugins: [],
+  purge: ['./src/components/**/*.vue', './src/pages/**/*.vue', './src/layouts/**/*.vue', './src/**/*.vue'],
+  future: {
+    purgeLayersByDefault: true,
+    removeDeprecatedGapUtilities: true
+  }
 }
