@@ -1,0 +1,5 @@
+export { default as SimpleLineChart } from './SimpleLineChart/index.vue'
+export { default as LineChart } from './LineChart/index.vue'
+export { default as BarChart } from './BarChart/index.vue'
+export { default as AreaChart } from './AreaChart/index.vue'
+export { default as StackedAreaChart } from './StackedAreaChart/index.vue'

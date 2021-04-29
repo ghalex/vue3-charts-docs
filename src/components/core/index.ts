@@ -1,0 +1,6 @@
+export { default as Hello } from './Hello/index.vue'
+export { default as Logo } from './Logo/index.vue'
+export { default as Navbar } from './Navbar/index.vue'
+export { default as Sidebar } from './Sidebar/index.vue'
+export { default as PrismEditor } from './PrismEditor/index.vue'
+export { default as Prop } from './Prop/index.vue'
