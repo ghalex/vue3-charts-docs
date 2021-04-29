@@ -29,11 +29,15 @@
         />
       </a>
     </div>
+
+    <div class="burger-menu" @click="showSidebar = !showSidebar">
+      <span class="material-icons-outlined"> menu </span>
+    </div>
   </header>
 </template>
 
 <script lang="ts">
-import { computed, defineComponent } from 'vue'
+import { computed, defineComponent, inject, ref } from 'vue'
 import { useRoute } from 'vue-router'
 import Logo from '../Logo/index.vue'
 
@@ -43,7 +47,8 @@ export default defineComponent({
   setup() {
     const route = useRoute()
     const pageName = computed(() => route.name || 'home')
-    return { route, pageName }
+    const showSidebar = inject('sidebar', ref(true))
+    return { route, pageName, showSidebar }
   }
 })
 </script>
@@ -60,7 +65,7 @@ export default defineComponent({
   display: flex;
   align-items: center;
   justify-content: space-between;
-  z-index: 500;
+  z-index: 1500;
   border-bottom: 1px solid #eee;
 }
 
@@ -92,6 +97,16 @@ export default defineComponent({
   &.active {
     color: theme('colors.green.700');
     border-bottom: 2px solid theme('colors.green.700');
+  }
+}
+
+.navbar .burger-menu {
+  display: none;
+  color: theme('colors.gray.800');
+  cursor: pointer;
+
+  @media (max-width: 768px) {
+    display: block;
   }
 }
 </style>

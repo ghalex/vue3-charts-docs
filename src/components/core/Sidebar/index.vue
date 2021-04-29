@@ -1,22 +1,22 @@
 <template>
-  <aside class="sidebar">
+  <aside class="sidebar" :class="{ show: showSidebar }">
     <section
       class="sidebar-section"
       v-for="(item, i) in items"
       :key="i"
       :class="{ open: route.path.indexOf(item.link) > -1 }"
     >
-      <router-link :to="item.link">
+      <a @click="() => goTo(item.link)">
         <h1 class="sidebar-title">
           <span class="material-icons">circle</span>
           {{ item.title }}
         </h1>
-      </router-link>
+      </a>
       <ul class="sidebar-links" v-if="route.path.indexOf(item.link) > -1">
         <li v-for="(child, j) in item.children" :key="j" :class="{ active: route.path.indexOf(child.link) > -1 }">
-          <router-link :to="child.link">
+          <a @click="() => goTo(child.link)">
             {{ child.title }}
-          </router-link>
+          </a>
         </li>
       </ul>
     </section>
@@ -24,8 +24,8 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref } from 'vue'
-import { useRoute } from 'vue-router'
+import { defineComponent, inject, ref } from 'vue'
+import { useRoute, useRouter } from 'vue-router'
 import data from './data'
 
 export default defineComponent({
@@ -34,8 +34,15 @@ export default defineComponent({
   setup() {
     const items = ref(data)
     const route = useRoute()
+    const router = useRouter()
+    const showSidebar = inject('sidebar', ref(true))
 
-    return { items, route }
+    function goTo(to: string) {
+      router.push(to)
+      showSidebar.value = false
+    }
+
+    return { items, route, showSidebar, goTo }
   }
 })
 </script>
@@ -44,19 +51,24 @@ export default defineComponent({
 .sidebar {
   width: 20rem;
   position: fixed;
-  z-index: 10;
+  z-index: 1000;
   margin: 0;
-  top: 58px;
+  top: 68px;
   left: 0;
   bottom: 0;
   box-sizing: border-box;
   background-color: white;
   border-right: 1px solid #eee;
   padding: 2rem 0 1rem 0;
-  display: none;
 
-  @screen md {
-    display: block;
+  @media (max-width: 768px) {
+    width: 100%;
+    right: 0;
+    display: none;
+
+    &.show {
+      display: block;
+    }
   }
 }
 
@@ -91,6 +103,7 @@ export default defineComponent({
 
       a {
         color: theme('colors.gray.700');
+        cursor: pointer;
       }
 
       a:hover {

@@ -1,6 +1,7 @@
 <template>
   <div class="home">
     <Navbar />
+    <Sidebar class="home-sidebar" />
     <div class="page-full">
       <div class="py-8 flex flex-col items-center">
         <img class="logo" :style="{ height: '120px' }" src="@/assets/logo.png" />
@@ -16,7 +17,7 @@
             alt="Github Stars"
           />
         </a> -->
-        <div :style="{ width: '650px' }">
+        <div class="main-chart">
           <ChartBlock :chartCode="code.chartCode" :dataCode="code.dataCode">
             <AreaChart />
           </ChartBlock>
@@ -28,13 +29,40 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import { Navbar, ChartBlock, AreaChart } from '@/components'
+import { Navbar, ChartBlock, AreaChart, Sidebar } from '@/components'
 import * as code from './code'
 
 export default defineComponent({
-  components: { Navbar, ChartBlock, AreaChart },
+  components: { Navbar, ChartBlock, AreaChart, Sidebar },
   setup() {
     return { code }
   }
 })
 </script>
+
+<style lang="postcss" scoped>
+.home-sidebar {
+  display: none;
+  @media (max-width: 768px) {
+    &.show {
+      display: block;
+    }
+  }
+}
+
+.main-chart {
+  width: 350px;
+
+  @screen sm {
+    width: 300px;
+  }
+
+  @screen md {
+    width: 450px;
+  }
+
+  @screen lg {
+    width: 650px;
+  }
+}
+</style>
