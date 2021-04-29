@@ -32,7 +32,7 @@ code {
 
 .page {
   margin-left: 20rem;
-  padding: 8rem 1rem;
+  padding: 6rem 1rem;
   min-height: 100vh;
   background-color: white;
 
@@ -42,9 +42,31 @@ code {
   }
 }
 
+.page-full {
+  padding: 6rem 1rem;
+  min-height: 100vh;
+  background-color: white;
+}
+
 .page .content {
   margin: auto;
   max-width: 750px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.8rem 2rem;
+  color: theme('colors.gray.100');
+  border: 2px solid theme('colors.gray.800');
+  background-color: theme('colors.gray.500');
+  border-radius: 8px;
+  font-weight: 500;
+}
+
+.btn.primary {
+  color: white;
+  background-color: theme('colors.green.500');
+  border-color: transparent;
 }
 
 

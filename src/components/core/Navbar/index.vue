@@ -2,13 +2,17 @@
   <header class="navbar">
     <div class="navbar-left flex items-end p-2">
       <Logo />
-      <div class="flex items-start ml-2">
-        <h1 class="text-xl leading-none text-green-700"><b>Vue3</b>-Charts</h1>
-        <small class="text-gray-500 leading-none">v1.0.11</small>
-      </div>
+      <router-link to="/">
+        <div class="flex items-start ml-2">
+          <h1 class="text-xl leading-none text-green-700"><b>Vue3</b>-Charts</h1>
+          <small class="text-gray-500 leading-none">v1.0.11</small>
+        </div>
+      </router-link>
     </div>
     <div class="navbar-right flex items-center mr-4">
-      <router-link to="/" aria-current="page" class="navbar-item"> Home </router-link>
+      <router-link to="/" aria-current="page" class="navbar-item" :class="{ active: route.name === 'home' }">
+        Home
+      </router-link>
       <router-link
         to="/docs/getting-started"
         aria-current="page"
@@ -17,9 +21,12 @@
       >
         Docs
       </router-link>
-      <a href="https://github.com/ghalex/vue3-charts" aria-current="page" class="navbar-item">
-        GitHub
-        <span class="material-icons-outlined text-gray-500 text-base ml-2"> logout </span>
+      <a href="https://github.com/ghalex/vue3-charts" aria-current="page" class="navbar-item"> GitHub </a>
+      <a href="https://github.com/ghalex/vue3-charts" class="block ml-4">
+        <img
+          src="https://img.shields.io/github/stars/ghalex/vue3-charts.svg?style=social&amp;label=Star"
+          alt="Github Stars"
+        />
       </a>
     </div>
   </header>
@@ -61,7 +68,7 @@ export default defineComponent({
   display: none;
 
   @screen md {
-    display: block;
+    display: flex;
   }
 }
 

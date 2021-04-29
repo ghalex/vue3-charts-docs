@@ -1,5 +1,12 @@
 <template>
-  <prism-editor class="my-editor" :lines="10" v-model="data" :highlight="highlighter" line-numbers />
+  <prism-editor
+    class="my-editor"
+    :lines="10"
+    v-model="data"
+    :highlight="highlighter"
+    :class="{ 'one-line': oneLine }"
+    line-numbers
+  />
 </template>
 
 <script>
@@ -24,7 +31,8 @@ export default {
   },
   props: {
     code: { type: String, default: '' },
-    lang: { type: String, default: 'markup' }
+    lang: { type: String, default: 'markup' },
+    oneLine: { type: Boolean, default: false }
   },
   setup(props, { emit }) {
     const data = ref(trim(props.code))
@@ -49,7 +57,7 @@ export default {
 }
 </script>
 
-<style>
+<style lang="postcss">
 .my-editor {
   position: relative;
   color: #424242;
@@ -85,8 +93,12 @@ export default {
 .prism-editor__line-numbers {
   z-index: 100;
 }
-/* .prism-editor__line-numbers {
-  background-color: #ccc !important;
-  padding-right: 4px;
-} */
+
+.my-editor.one-line .prism-editor__container {
+  padding: 10px 10px;
+}
+
+.my-editor.one-line .prism-editor__line-numbers {
+  padding: 10px 0px !important;
+}
 </style>
