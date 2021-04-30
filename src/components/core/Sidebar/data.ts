@@ -4,6 +4,10 @@ export default [
     link: '/docs/getting-started'
   },
   {
+    title: 'Custom layer',
+    link: '/docs/custom-layer'
+  },
+  {
     title: 'Charts',
     link: '/docs/charts',
     children: [

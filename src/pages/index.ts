@@ -1,5 +1,6 @@
 export { default as GettingStarted } from './GettingStarted/index.vue'
 export { default as Types } from './Types/index.vue'
+export { default as CustomLayer } from './CustomLayer/index.vue'
 
 export { default as Charts } from './Charts/index.vue'
 export { default as LineChart } from './Charts/LineChart/index.vue'

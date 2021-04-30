@@ -15,7 +15,7 @@
     "vue": "^3.0.11",
     "vue-prism-editor": "^2.0.0-alpha.2",
     "vue-router": "^4.0.6",
-    "vue3-charts": "^1.1.9"
+    "vue3-charts": "^1.1.11"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^4.22.0",

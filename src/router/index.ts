@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory, RouteRecordRaw, RouterScrollBehavior } from 'vue-router'
-import { Home, Docs, GettingStarted, Types, Charts, LineChart, BarChart, AreaChart } from '@/pages'
+import { Home, Docs, GettingStarted, Types, Charts, LineChart, BarChart, AreaChart, CustomLayer } from '@/pages'
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -16,6 +16,11 @@ const routes: Array<RouteRecordRaw> = [
         path: 'getting-started',
         name: 'getting-started',
         component: GettingStarted
+      },
+      {
+        path: 'custom-layer',
+        name: 'custom-layer',
+        component: CustomLayer
       },
       {
         path: 'charts',

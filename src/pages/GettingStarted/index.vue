@@ -26,17 +26,6 @@
 
     <h2>3. More Charts</h2>
     <p>Check the <a href="/docs/charts">charts</a> section for more examples.</p>
-
-    <!-- <PropsBlock
-      class="mt-4"
-      :props="[
-        { name: 'direction', types: ['horizontal', 'verical'], description: 'Chart direction' },
-        { name: 'axis', types: ['AxisConfig'], description: 'Config for axis', link: true },
-        { name: 'margin', types: ['Margin'], description: 'Config margin', link: true }
-      ]"
-    />
-
-    <CodeBlock :code="chartCode" class="mt-4" /> -->
   </div>
 </template>
 

@@ -71,13 +71,7 @@ export default defineComponent({
     return { data, direction, margin, axis }
   }
 })
-</script>
-
-<style>
-#app {
-  color: #2ecc71
-}
-</style>`
+</script>`
 
 export const dataCode = `export const plByMonth = [
   { name: 'Jan', pl: 1000, avg: 500, inc: 300 },
