@@ -26,7 +26,7 @@
     <p class="mt-0">Chart size.</p>
     <CodeBlock :code="code.size" class="mt-4" />
 
-    <h1 id="margin" class="mt-6">Marign</h1>
+    <h1 id="margin" class="mt-6">Margin</h1>
     <p class="mt-0">Chart margins.</p>
     <CodeBlock :code="code.margin" class="mt-4" />
   </div>
