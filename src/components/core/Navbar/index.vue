@@ -47,7 +47,7 @@ export default defineComponent({
   setup() {
     const route = useRoute()
     const pageName = computed(() => route.name || 'home')
-    const showSidebar = inject('sidebar', ref(true))
+    const showSidebar = inject('sidebar', ref(false))
     return { route, pageName, showSidebar }
   }
 })

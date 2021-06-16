@@ -7,7 +7,7 @@ import { defineComponent, provide, ref } from 'vue'
 
 export default defineComponent({
   setup() {
-    const showSidebar = ref('true')
+    const showSidebar = ref(false)
     provide('sidebar', showSidebar)
   }
 })
