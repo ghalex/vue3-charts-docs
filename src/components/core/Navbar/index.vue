@@ -5,7 +5,7 @@
       <router-link to="/">
         <div class="flex items-start ml-2">
           <h1 class="text-xl leading-none text-green-700"><b>Vue3</b>-Charts</h1>
-          <small class="text-gray-500 leading-none">v1.0.11</small>
+          <small class="text-gray-500 leading-none">v1.0.18</small>
         </div>
       </router-link>
     </div>
