@@ -1,7 +1,12 @@
 <template>
   <Responsive class="w-full">
     <template #main="{ width }">
-      <Chart :size="{ width, height: 420 }" :data="data" :margin="margin" :direction="direction">
+      <Chart
+        :size="{ width, height: 420 }"
+        :data="data"
+        :margin="margin"
+        :direction="direction"
+      >
         <template #layers>
           <Grid strokeDasharray="2,2" />
           <Line :dataKeys="['name', 'pl']" />
@@ -19,7 +24,7 @@ import { plByMonth } from '@/data'
 export default defineComponent({
   name: 'LineChart',
   components: { Responsive, Chart, Grid, Line },
-  setup() {
+  setup () {
     const data = ref(plByMonth)
     const direction = ref('horizontal')
     const margin = ref({

@@ -35,7 +35,7 @@ interface Prop {
   description: string
 }
 
-export default defineComponent ({
+export default defineComponent({
   name: 'PropsBlock',
   props: {
     props: {

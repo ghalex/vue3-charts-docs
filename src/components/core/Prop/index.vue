@@ -3,7 +3,11 @@
     <div>{{ name }}</div>
     <div class="flex flex-wrap items-start">
       <div v-for="type in types" :key="type">
-        <router-link v-if="link" class="block m-1 code" :to="`/docs/types#${type.toLowerCase()}`">
+        <router-link
+          v-if="link"
+          class="block m-1 code"
+          :to="`/docs/types#${type.toLowerCase()}`"
+        >
           {{ type }}
         </router-link>
         <div class="m-1 code" v-else>
@@ -19,7 +23,7 @@
 
 <script lang="ts">
 export default {
-  name: 'Prop',
+  name: 'PropItems',
   props: {
     name: { type: String },
     types: { type: Array },

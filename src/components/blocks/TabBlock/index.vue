@@ -22,6 +22,7 @@
 import { defineComponent, ref } from 'vue'
 
 export default defineComponent({
+  name: 'TabBlock',
   components: {},
   props: {
     tabs: {
@@ -29,7 +30,7 @@ export default defineComponent({
       default: () => []
     }
   },
-  setup(_, { slots }) {
+  setup (_, { slots }) {
     const index = ref(0)
 
     return { index }

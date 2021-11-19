@@ -4,13 +4,20 @@
       <Logo />
       <router-link to="/">
         <div class="flex items-start ml-2">
-          <h1 class="text-xl leading-none text-green-700"><b>Vue3</b>-Charts</h1>
+          <h1 class="text-xl leading-none text-green-700">
+            <b>Vue3</b>-Charts
+          </h1>
           <small class="text-gray-500 leading-none">v1.0.18</small>
         </div>
       </router-link>
     </div>
     <div class="navbar-right flex items-center mr-4">
-      <router-link to="/" aria-current="page" class="navbar-item" :class="{ active: route.name === 'home' }">
+      <router-link
+        to="/"
+        aria-current="page"
+        class="navbar-item"
+        :class="{ active: route.name === 'home' }"
+      >
         Home
       </router-link>
       <router-link
@@ -21,7 +28,13 @@
       >
         Docs
       </router-link>
-      <a href="https://github.com/ghalex/vue3-charts" aria-current="page" class="navbar-item"> GitHub </a>
+      <a
+        href="https://github.com/ghalex/vue3-charts"
+        aria-current="page"
+        class="navbar-item"
+      >
+        GitHub
+      </a>
       <a href="https://github.com/ghalex/vue3-charts" class="block ml-4">
         <img
           src="https://img.shields.io/github/stars/ghalex/vue3-charts.svg?style=social&amp;label=Star"
@@ -42,9 +55,9 @@ import { useRoute } from 'vue-router'
 import Logo from '../Logo/index.vue'
 
 export default defineComponent({
-  name: 'Navbar',
+  name: 'NavBar',
   components: { Logo },
-  setup() {
+  setup () {
     const route = useRoute()
     const pageName = computed(() => route.name || 'home')
     const showSidebar = inject('sidebar', ref(false))

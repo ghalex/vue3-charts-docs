@@ -4,11 +4,17 @@
     <Sidebar class="home-sidebar" />
     <div class="page-full">
       <div class="py-8 flex flex-col items-center">
-        <img class="logo" :style="{ height: '120px' }" src="@/assets/logo.png" />
+        <img
+          class="logo"
+          :style="{ height: '120px' }"
+          src="@/assets/logo.png"
+        />
         <h1 class="font-bold mt-4 text-4xl text-gray-800">Vue3-Charts</h1>
         <p class="my-0 text-xl">Data visualization in Vue3 made easy</p>
         <div class="my-6">
-          <router-link to="/docs/getting-started" class="btn primary mr-4">Get Started</router-link>
+          <router-link to="/docs/getting-started" class="btn primary mr-4"
+            >Get Started</router-link
+          >
           <a href="https://github.com/ghalex/vue3-charts" class="btn">GitHub</a>
         </div>
         <!-- <a href="https://github.com/ghalex/vue3-charts">
@@ -32,7 +38,9 @@
               />
             </a>
             <a href="https://10stickere.ro" class="sponsor">
-              <img src="https://10stickere.ro/wp-content/uploads/2020/12/logo-1.svg" />
+              <img
+                src="https://10stickere.ro/wp-content/uploads/2020/12/logo-1.svg"
+              />
             </a>
             <a href="#" class="sponsor">
               <img src="/img/coderbox.png" />
@@ -56,7 +64,8 @@ import * as code from './code'
 
 export default defineComponent({
   components: { Navbar, ChartBlock, AreaChart, Sidebar },
-  setup() {
+  name: 'PageHome',
+  setup () {
     return { code }
   }
 })

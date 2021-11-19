@@ -1,7 +1,13 @@
 <template>
   <Responsive class="w-full">
     <template #main="{ width }">
-      <Chart :size="{ width, height: 420 }" :data="data" :margin="margin" :direction="direction" :axis="axis">
+      <Chart
+        :size="{ width, height: 420 }"
+        :data="data"
+        :margin="margin"
+        :direction="direction"
+        :axis="axis"
+      >
         <template #layers>
           <!-- <Grid strokeDasharray="2,2" /> -->
           <Line :dataKeys="['name', 'pl']" />
@@ -27,7 +33,7 @@ export default defineComponent({
       default: false
     }
   },
-  setup() {
+  setup () {
     const data = ref(plByMonth)
     const direction = ref('horizontal')
     const margin = ref({

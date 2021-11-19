@@ -1,11 +1,21 @@
 <template>
   <Responsive class="w-full">
     <template #main="{ width }">
-      <Chart :size="{ width, height: 420 }" :data="data" :margin="margin" :direction="direction" :axis="axis">
+      <Chart
+        :size="{ width, height: 420 }"
+        :data="data"
+        :margin="margin"
+        :direction="direction"
+        :axis="axis"
+      >
         <template #layers>
           <Grid strokeDasharray="2,2" />
           <Line :dataKeys="['name', 'pl']" />
-          <Line :dataKeys="['name', 'avg']" :lineStyle="{ stroke: 'red' }" type="step" />
+          <Line
+            :dataKeys="['name', 'avg']"
+            :lineStyle="{ stroke: 'red' }"
+            type="step"
+          />
         </template>
         <template #widgets>
           <Tooltip
@@ -31,7 +41,7 @@ import { plByMonth } from '@/data'
 export default defineComponent({
   name: 'LineChart',
   components: { Responsive, Chart, Grid, Line, Tooltip },
-  setup() {
+  setup () {
     const data = ref(plByMonth)
     const direction = ref('horizontal')
     const margin = ref({

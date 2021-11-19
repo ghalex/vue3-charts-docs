@@ -1,10 +1,20 @@
 <template>
   <Responsive class="w-full">
     <template #main="{ width }">
-      <Chart :size="{ width, height: 420 }" :data="data" :margin="margin" :direction="direction" :axis="axis">
+      <Chart
+        :size="{ width, height: 420 }"
+        :data="data"
+        :margin="margin"
+        :direction="direction"
+        :axis="axis"
+      >
         <template #layers>
           <Grid strokeDasharray="2,2" />
-          <Area :dataKeys="['name', 'pl']" type="monotone" :areaStyle="{ fill: 'url(#grad)' }" />
+          <Area
+            :dataKeys="['name', 'pl']"
+            type="monotone"
+            :areaStyle="{ fill: 'url(#grad)' }"
+          />
           <Line
             :dataKeys="['name', 'pl']"
             type="monotone"
@@ -12,8 +22,20 @@
               stroke: '#9f7aea'
             }"
           />
-          <Marker :value="1000" label="Start Value" color="#76c893" strokeWidth="2" strokeDasharray="6 6" />
-          <Marker :value="2000" label="Stop Value" color="#9f7aea" strokeWidth="2" strokeDasharray="6 6" />
+          <Marker
+            :value="1000"
+            label="Start Value"
+            color="#76c893"
+            strokeWidth="2"
+            strokeDasharray="6 6"
+          />
+          <Marker
+            :value="2000"
+            label="Stop Value"
+            color="#9f7aea"
+            strokeWidth="2"
+            strokeDasharray="6 6"
+          />
           <defs>
             <linearGradient id="grad" gradientTransform="rotate(90)">
               <stop offset="0%" stop-color="#be90ff" stop-opacity="1" />
@@ -50,13 +72,21 @@
 
 <script lang="ts">
 import { defineComponent, ref } from 'vue'
-import { Responsive, Chart, Grid, Area, Line, Marker, Tooltip } from 'vue3-charts'
+import {
+  Responsive,
+  Chart,
+  Grid,
+  Area,
+  Line,
+  Marker,
+  Tooltip
+} from 'vue3-charts'
 import { plByMonth } from '@/data'
 
 export default defineComponent({
   name: 'AreaChart',
   components: { Responsive, Chart, Grid, Area, Line, Marker, Tooltip },
-  setup() {
+  setup () {
     const data = ref(plByMonth)
     const direction = ref('horizontal')
     const marker = ref(0)

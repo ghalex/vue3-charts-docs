@@ -1,9 +1,12 @@
 <template>
   <div class="types">
     <h1 id="chart-config">ChartConfig</h1>
-    <p class="mt-0">Chart config object is used to set size, margin, direction and axis.</p>
+    <p class="mt-0">
+      Chart config object is used to set size, margin, direction and axis.
+    </p>
     <p>
-      See: <router-link to="#axis">AxisConfig</router-link>, <router-link to="#margin">Margin</router-link>,
+      See: <router-link to="#axis">AxisConfig</router-link>,
+      <router-link to="#margin">Margin</router-link>,
       <router-link to="#size">Size</router-link>
     </p>
     <CodeBlock :code="code.chartConfig" class="mt-4" />
@@ -18,7 +21,11 @@
     >
       <template #default="{ selected }">
         <PrismEditor :code="code.axis" :readonly="true" v-if="selected === 0" />
-        <PrismEditor :code="code.axisDefault" :readonly="true" v-if="selected === 1" />
+        <PrismEditor
+          :code="code.axisDefault"
+          :readonly="true"
+          v-if="selected === 1"
+        />
       </template>
     </TabBlock>
 
@@ -39,7 +46,8 @@ import * as code from './code'
 
 export default defineComponent({
   components: { ...Components },
-  setup() {
+  name: 'PageTypes',
+  setup () {
     return { code }
   }
 })

@@ -26,6 +26,7 @@ import 'prismjs/components/prism-powershell'
 import 'prismjs/themes/prism.css'
 
 export default {
+  name: 'PrismEditorWrapper',
   components: {
     PrismEditor
   },
@@ -34,7 +35,7 @@ export default {
     lang: { type: String, default: 'markup' },
     oneLine: { type: Boolean, default: false }
   },
-  setup(props, { emit }) {
+  setup (props, { emit }) {
     const data = ref(trim(props.code))
     const map = {
       bash: languages.bash,
@@ -44,7 +45,7 @@ export default {
         ...languages.css
       }
     }
-    function highlighter(code) {
+    function highlighter (code) {
       return highlight(code, map[props.lang])
     }
 

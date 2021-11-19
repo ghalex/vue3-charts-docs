@@ -10,7 +10,8 @@ import * as Components from '@/components'
 
 export default defineComponent({
   components: { ...Components },
-  setup() {
+  name: 'PageCharts',
+  setup () {
     return {}
   }
 })

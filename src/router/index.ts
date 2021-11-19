@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory, RouteRecordRaw, RouterScrollBehavior } from 'vue-router'
-import { Home, Docs, GettingStarted, Types, Charts, LineChart, BarChart, AreaChart, CustomLayer } from '@/pages'
+import { Home, Docs, GettingStarted, Types, Charts, LineChart, BarChart, AreaChart, CustomLayer, PieChart } from '@/pages'
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -42,6 +42,10 @@ const routes: Array<RouteRecordRaw> = [
             path: 'area',
             name: 'area',
             component: AreaChart
+          }, {
+            path: 'pie',
+            name: 'pie',
+            component: PieChart
           }
         ]
       },

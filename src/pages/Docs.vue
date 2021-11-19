@@ -16,7 +16,8 @@ import { Navbar, Sidebar } from '@/components'
 
 export default defineComponent({
   components: { Navbar, Sidebar },
-  setup() {
+  name: 'PageDocs',
+  setup () {
     onMounted(() => {
       console.log('work')
     })

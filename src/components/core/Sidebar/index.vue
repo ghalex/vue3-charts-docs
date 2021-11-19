@@ -13,7 +13,11 @@
         </h1>
       </a>
       <ul class="sidebar-links" v-if="route.path.indexOf(item.link) > -1">
-        <li v-for="(child, j) in item.children" :key="j" :class="{ active: route.path.indexOf(child.link) > -1 }">
+        <li
+          v-for="(child, j) in item.children"
+          :key="j"
+          :class="{ active: route.path.indexOf(child.link) > -1 }"
+        >
           <a @click="() => goTo(child.link)">
             {{ child.title }}
           </a>
@@ -29,15 +33,15 @@ import { useRoute, useRouter } from 'vue-router'
 import data from './data'
 
 export default defineComponent({
-  name: 'Sidebar',
+  name: 'SideBar',
   components: {},
-  setup() {
+  setup () {
     const items = ref(data)
     const route = useRoute()
     const router = useRouter()
     const showSidebar = inject('sidebar', ref(true))
 
-    function goTo(to: string) {
+    function goTo (to: string) {
       router.push(to)
       showSidebar.value = false
     }

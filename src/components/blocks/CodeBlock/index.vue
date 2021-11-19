@@ -1,6 +1,20 @@
 <template>
-  <div class="shadow-sm rounded overflow-hidden border border-gray-200 my-2 code-block">
-    <PrismEditor :code="code" :readonly="true" :lang="lang" :oneLine="oneLine" />
+  <div
+    class="
+      shadow-sm
+      rounded
+      overflow-hidden
+      border border-gray-200
+      my-2
+      code-block
+    "
+  >
+    <PrismEditor
+      :code="code"
+      :readonly="true"
+      :lang="lang"
+      :oneLine="oneLine"
+    />
   </div>
 </template>
 
@@ -9,6 +23,7 @@ import { defineComponent } from 'vue'
 import { PrismEditor } from '@/components/core'
 
 export default defineComponent({
+  name: 'CodeBlock',
   components: { PrismEditor },
   props: {
     code: {

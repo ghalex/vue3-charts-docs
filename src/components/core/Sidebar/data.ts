@@ -13,7 +13,8 @@ export default [
     children: [
       { title: 'Line Chart', link: '/docs/charts/line' },
       { title: 'Bar Chart', link: '/docs/charts/bar' },
-      { title: 'Area Chart', link: '/docs/charts/area' }
+      { title: 'Area Chart', link: '/docs/charts/area' },
+      { title: 'Pie Chart', link: '/docs/charts/pie' }
     ]
   },
   {

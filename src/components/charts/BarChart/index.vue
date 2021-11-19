@@ -1,12 +1,33 @@
 <template>
   <Responsive class="w-full">
     <template #main="{ width }">
-      <Chart :size="{ width, height: 420 }" :data="data" :margin="margin" :direction="direction" :axis="axis">
+      <Chart
+        :size="{ width, height: 420 }"
+        :data="data"
+        :margin="margin"
+        :direction="direction"
+        :axis="axis"
+      >
         <template #layers>
           <Grid strokeDasharray="2,2" />
-          <Bar :dataKeys="['name', 'pl']" :barStyle="{ fill: '#99d98c' }" :maxWidth="50" />
-          <Bar :dataKeys="['name', 'avg']" :barStyle="{ fill: '#52b69a' }" :maxWidth="50" />
-          <Marker v-if="marker" :value="1000" label="Avg." color="#e76f51" strokeWidth="2" strokeDasharray="6 6" />
+          <Bar
+            :dataKeys="['name', 'pl']"
+            :barStyle="{ fill: '#99d98c' }"
+            :maxWidth="50"
+          />
+          <Bar
+            :dataKeys="['name', 'avg']"
+            :barStyle="{ fill: '#52b69a' }"
+            :maxWidth="50"
+          />
+          <Marker
+            v-if="marker"
+            :value="1000"
+            label="Avg."
+            color="#e76f51"
+            strokeWidth="2"
+            strokeDasharray="6 6"
+          />
         </template>
         <template #widgets>
           <Tooltip
@@ -43,7 +64,7 @@ import { plByMonth } from '@/data'
 export default defineComponent({
   name: 'BarChart',
   components: { Responsive, Chart, Grid, Bar, Marker, Tooltip },
-  setup() {
+  setup () {
     const data = ref(plByMonth)
     const direction = ref('horizontal')
     const marker = ref(0)

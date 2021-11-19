@@ -10,7 +10,12 @@
     <template #default="{ selected }">
       <slot v-if="selected === 0" />
       <PrismEditor :code="chartCode" :readonly="true" v-if="selected === 1" />
-      <PrismEditor :code="dataCode" :readonly="true" v-if="selected === 2" :style="{ minHeight: '420px' }" />
+      <PrismEditor
+        :code="dataCode"
+        :readonly="true"
+        v-if="selected === 2"
+        :style="{ minHeight: '420px' }"
+      />
     </template>
   </TabBlock>
 </template>
@@ -21,6 +26,7 @@ import { PrismEditor } from '@/components/core'
 import TabBlock from '../TabBlock/index.vue'
 
 export default defineComponent({
+  name: 'ChartBlock',
   components: { PrismEditor, TabBlock },
   props: {
     chartCode: {

@@ -1,7 +1,13 @@
 <template>
   <Responsive class="w-full">
     <template #main="{ width }">
-      <Chart :size="{ width, height: 420 }" :data="data" :margin="margin" :direction="direction" :axis="axis">
+      <Chart
+        :size="{ width, height: 420 }"
+        :data="data"
+        :margin="margin"
+        :direction="direction"
+        :axis="axis"
+      >
         <template #layers>
           <Grid strokeDasharray="2,2" />
           <Group :stacked="true">
@@ -59,7 +65,7 @@ import { plByMonth } from '@/data'
 export default defineComponent({
   name: 'AreaChart',
   components: { Responsive, Chart, Grid, Area, Group, Tooltip },
-  setup() {
+  setup () {
     const data = ref(plByMonth)
     const direction = ref('horizontal')
     const marker = ref(0)
