@@ -7,7 +7,7 @@
           <h1 class="text-xl leading-none text-green-700">
             <b>Vue3</b>-Charts
           </h1>
-          <small class="text-gray-500 leading-none">v1.0.24</small>
+          <small class="text-gray-500 leading-none">v1.1.33</small>
         </div>
       </router-link>
     </div>
