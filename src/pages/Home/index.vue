@@ -37,8 +37,8 @@
                 src="/img/logozapant.png"
               />
             </a>
-            <a href="#" class="sponsor">
-              <img src="/img/coderbox.png" />
+            <a href="https://logzai.com" class="sponsor">
+              <img src="/img/logzai_transparent.png" />
             </a>
           </div>
         </div>
